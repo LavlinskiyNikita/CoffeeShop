@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="main"
-        android:title="main"
+    <item android:id="@+id/main"
+        android:title="Main"
         android:icon="@drawable/main"/>
 
-    <item android:id="cart"
-        android:title="cart"
+    <item android:id="@+id/cart"
+        android:title="Cart"
         android:icon="@drawable/cart1"/>
 
-    <item android:id="user"
-        android:title="user"
+    <item android:id="@+id/user"
+        android:title="User"
         android:icon="@drawable/user"/>
 </menu>
