@@ -4,11 +4,13 @@ import android.R.layout;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.example.coffeeshop.R;
@@ -22,6 +24,16 @@ public class mainFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
 
         ListView mainlist = (ListView) v.findViewById(R.id.main_list);
+
+        ImageButton map = (ImageButton) v.findViewById(R.id.mapIcon);
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment search = new MapFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.frame_main, search).commit();
+            }
+        });
 
         String[] names = {
             "Nikita",
@@ -110,6 +122,7 @@ public class mainFragment extends Fragment {
                 android.R.layout.simple_list_item_1,
                 names
         );
+
 
         mainlist.setAdapter(adapter);
         return v;
